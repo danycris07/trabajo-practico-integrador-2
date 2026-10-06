@@ -19,16 +19,11 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="bg-slate-900 p-4 text-white shadow-md flex justify-between items-center">
-      <div className="font-bold text-xl tracking-wide">
-        <Link to="/">Gestión de Blog</Link>
-      </div>
-      <div className="flex gap-4 items-center">
-        <Link to="/" className="hover:text-slate-300 transition-colors">Inicio</Link>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition font-medium"
-        >
+    <nav className="flex justify-between items-center bg-black text-white p-4">
+      <Link to="/" className="font-bold text-lg">Gestión de Blog</Link>
+      <div className="flex items-center gap-4">
+        <Link to="/">Inicio</Link>
+        <button onClick={handleLogout} className="bg-red-600 px-3 py-1 text-white">
           Logout
         </button>
       </div>
