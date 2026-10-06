@@ -1,7 +1,11 @@
+import { Navbar } from "./components/Navbar.jsx"
+
 export const App = () => {
   return (
-    <div> 
-      <h1>Cofniguracion inicial</h1>
-    </div>
+    <>
+      <Navbar />
+
+      <h1>Mi Blog</h1>
+    </>
   )
 }

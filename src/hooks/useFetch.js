@@ -7,33 +7,31 @@ export const useFetch = (url) => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    setError(null);
-
     try {
       const response = await fetch(url, {
         credentials: "include",
       });
 
       if (!response.ok) {
-        throw new Error(`Error HTTP: ${response.status}`);
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
       }
 
-      const result = await response.json();
-      setData(result);
+      const json = await response.json();
+      setData(json);
+      setError(null);
     } catch (err) {
       setError(err.message);
+      setData(null);
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    if (url) {
+      fetchData();
+    }
   }, [url]);
 
-  return {
-    data,
-    isLoading,
-    error,
-  };
+  return { data, isLoading, error };
 };
