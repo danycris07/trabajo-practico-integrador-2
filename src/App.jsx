@@ -1,11 +1,7 @@
-import { Navbar } from "./components/Navbar.jsx"
+import { AppRouter } from './router/AppRouter';
 
-export const App = () => {
-  return (
-    <>
-      <Navbar />
-
-      <h1>Mi Blog</h1>
-    </>
-  )
+function App() {
+  return <AppRouter />;
 }
+
+export default App;
